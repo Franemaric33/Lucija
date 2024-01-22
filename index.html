@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+    }
+
+    button {
+      margin-right: 10px; /* Adjust the margin as needed */
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    a {
+      margin-right: 10px; /* Adjust the margin as needed */
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #randomButton {
+      margin-right: 0; /* No margin for the last button */
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hoćeš li biti moja?</h1>
+  <iframe src="https://giphy.com/embed/DsEDsFSgDNUpG" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
+  <div class="button-container">
+    <a href="yes.html">Hoću!</a>
+    <button id="randomButton" onmouseover="moveButton()">Ne!</button>
+  </div>
+
+  <script>
+    function moveButton() {
+      var button = document.getElementById('randomButton');
+      var maxX = window.innerWidth - button.clientWidth;
+      var maxY = window.innerHeight - button.clientHeight;
+
+      var randomX = Math.floor(Math.random() * maxX);
+      var randomY = Math.floor(Math.random() * maxY);
+
+      button.style.left = randomX + 'px';
+      button.style.top = randomY + 'px';
+    }
+  </script>
+</body>
+</html>
